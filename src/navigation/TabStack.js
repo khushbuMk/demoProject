@@ -43,8 +43,8 @@ const SearchStackNavigator = () => {
     return(
         <SearchStack.Navigator initialRouteName="Search" headerMode={'none'}  >
             <SearchStack.Screen name={'Search'} component={Search} />
-            <SearchStack.Screen name={'people'} component={people} />
-            <SearchStack.Screen name={'reels'} component={reels} />
+            {/* <SearchStack.Screen name={'people'} component={people} />
+            <SearchStack.Screen name={'reels'} component={reels} /> */}
         </SearchStack.Navigator>
     )
 }
