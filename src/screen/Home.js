@@ -73,14 +73,14 @@ const Home = () => {
 
     const NewsComponent = (item, index) => {
         return(
-            <View style={{ flex:1,  margin:5,borderRadius:20,overflow:'hidden',elevation:5 }} key={index}>
-                <Image style={{height:wp(40), width:wp(40), }} source={item.img} />
-                <Text style={{fontSize:10, fontWeight:'500',position:'absolute', padding:5, color:'white',bottom:0, textAlign:'center',shadowColor:'grey' }}>{item.desc}</Text>
+            <View style={{ flex:1,  margin:10, borderRadius:35, overflow:'hidden',elevation:2 }} key={index}>
+                <Image resizeMode='cover' style={{height:wp(42), width:wp(42), }} source={item.img} />
+                <Text style={{fontSize:10, width:wp(42), fontWeight:'500',position:'absolute', padding:5, color:'white',bottom:0, textAlign:'center',shadowColor:'grey' }}>{item.desc}</Text>
             </View>
         )
     }
 
-    const FeedComponent = ({item,index}) => {
+    const FeedComponent = (item,index) => {
         return (
             <View key={index} style={{marginVertical:hp(1.5), paddingHorizontal:hp(1)}}>
                 <View style={{flexDirection:'row'}} >
@@ -118,33 +118,38 @@ const Home = () => {
     }
 
     return (
-        <View style={{flex:1,paddingHorizontal:wp(3),marginTop:hp(2)}}>
-            <View style={{flexDirection:'row', alignItems:'center'}}>
+        <View style={{flex:1,marginTop:hp(2)}}>
+            <View style={{flexDirection:'row', alignItems:'center',paddingHorizontal:wp(3)}}>
                 <Text style={{flex:1, fontSize:20, fontWeight:'100'}}>Hey Mark,</Text>
                 <Icon style={{padding:10}} name="bell" size={20} color="black" />
                 <Icon style={{padding:10}} name="email" size={20} color="black" />                
             </View>
 
             <ScrollView>
-                <View style={{ flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
+                <View style={{ flexDirection:'row', alignItems:'center', justifyContent:'space-between',paddingHorizontal:wp(3)}}>
                     <Text style={{fontWeight:'bold', fontSize:14, color:'darkblue',paddingTop:10}} >Trending News</Text>
                     <Text style={{fontSize:10, color:'darkgrey',paddingTop:10}} >See More</Text>
                 </View>            
 
                 <View style={{width:'100%', height:hp(21)}}>
                     <ScrollView 
+                        showsHorizontalScrollIndicator={false}
                         style={{width:'100%', flex:1}}
                         horizontal >                
                         {trendingNews.map(NewsComponent)}
                     </ScrollView>
                 </View>
+
+                <View style={{flex:1, marginVertical:hp(2),paddingHorizontal:wp(3)}}>
+                    {postFeed.map((item)=>FeedComponent(item))}
+                </View>
                 
-                <FlatList
+                {/* <FlatList
                     data = {postFeed} 
                     renderItem = {FeedComponent}
-                    style={{flex:1, marginVertical:hp(2)}}
+                    style={{flex:1, marginVertical:hp(2),paddingHorizontal:wp(3)}}
                     keyExtractor={(item, index)=>index}
-                />
+                /> */}
                 {/* <EntypoIcon style={{position:'absolute',alignSelf:'flex-end',marginTop:hp(98)}}  name="circle-with-plus" size={50} color="skyblue" /> */}
             </ScrollView>
             <EntypoIcon style={{position:'absolute',alignSelf:'flex-end',marginTop:hp(80),right:10}}  name="circle-with-plus" size={60} color="skyblue" />
