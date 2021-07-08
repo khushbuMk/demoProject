@@ -163,14 +163,14 @@ const data = [
 const stocks = () => {
     const StockCard = ({ item, index }) => {
         return (
-            <View style={{width:wp(90), backgroundColor:'white', flexDirection:'row', marginVertical:wp(1.5),marginHorizontal:wp(5), padding:hp(1), flex:1, overflow:'hidden',borderRadius:15, elevation:6}} >
+            <View style={{width:wp(90), height:hp(8), backgroundColor:'white', flexDirection:'row', marginVertical:wp(1.5),marginHorizontal:wp(5), padding:hp(1), flex:1, overflow:'hidden',borderRadius:15, elevation:6}} >
                 
                 <View style={{margin:hp(1),alignItems:'center', justifyContent:'center' }}>
                     <Image source={item.profileImg} style={{ width:wp(18), height:wp(10)}} resizeMode='cover'  />
                 </View>
 
                 <View style={{flex:1, alignItems:'center', alignSelf:'center'}}>
-                <VictoryChart width={wp(40)} height={hp(15)} theme={VictoryTheme.material}>
+                <VictoryChart width={wp(40)} height={hp(18)} theme={VictoryTheme.material}>
                     <VictoryLine 
                         width={wp(40)} 
                         height={hp(4.5)} 
@@ -195,6 +195,7 @@ const stocks = () => {
                             ticks: {stroke: "transparent", size: 0},
                             tickLabels: {color:'transparent'},
                             axis: {stroke: "transparent"},
+                            axisLabel: {color:'transparent'},
                         }} 
                         dependentAxis={false} 
                         standalone={false}/>

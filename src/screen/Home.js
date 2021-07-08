@@ -73,7 +73,7 @@ const Home = () => {
 
     const NewsComponent = (item, index) => {
         return(
-            <View style={{ flex:1,  margin:10, borderRadius:35, overflow:'hidden',elevation:2 }} key={index}>
+            <View style={{ flex:1,  margin:10, borderRadius:35, overflow:'hidden',elevation:2,backgroundColor:'white' }} key={index}>
                 <Image resizeMode='cover' style={{height:wp(42), width:wp(42), }} source={item.img} />
                 <Text style={{fontSize:10, width:wp(42), fontWeight:'500',position:'absolute', padding:5, color:'white',bottom:0, textAlign:'center',shadowColor:'grey' }}>{item.desc}</Text>
             </View>
